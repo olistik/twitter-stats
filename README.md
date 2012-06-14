@@ -1,6 +1,6 @@
 # Twitter::Stats
 
-TODO: Write a gem description
+Retrieves some Twitter stats using Topsy.
 
 ## Installation
 
@@ -18,7 +18,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```bash
+twitter-stats <username> <keyword> [days_ago]
+```
+
+or directly into your code
+
+```ruby
+require 'twitter-stats'
+
+puts Twitter::Stats::Count.new('olistik', 'ruby', 100).value
+```
 
 ## Contributing
 
