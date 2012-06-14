@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require 'twitter-stats'
+
+if ARGV.length < 2 || ARGV.length > 3
+  puts "Usage:\ntwitter-stats <username> <keyword> [days_ago]"
+  exit 1
+end
+
+username = ARGV[0]
+keyword = ARGV[1]
+days_ago = ARGV[2] || 356
+
+value = Twitter::Stats::Count.new(username, keyword, days_ago).value
+puts "#{username}:#{keyword}=#{value}"
