@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["maurizio.demagnis@gmail.com"]
   gem.description   = %q{Makes some stats about twitter usage, using Topsy}
   gem.summary       = %q{Right now it only counts the number of tweets with a specified keyword.}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/olistik/twitter-stats"
 
   gem.add_dependency 'nokogiri', '~> 1.5.2'
 
