@@ -1,6 +1,7 @@
 require "twitter-stats/version"
 require 'nokogiri'
 require 'open-uri'
+require 'pry'
 
 module Twitter
   module Stats
@@ -26,8 +27,16 @@ module Twitter
       end
 
       def fetch
-        doc = Nokogiri::HTML(open(topsy_search_url))
-        doc.css('.result-desc strong')[2].content.to_i
+        @doc = Nokogiri::HTML(open(topsy_search_url))
+        has_no_results? ? 0 : results_count
+      end
+
+      def has_no_results?
+        @doc.css('.no-results-box').count > 0
+      end
+
+      def results_count
+        @doc.css('.result-desc strong')[2].content.to_i
       end
     end
 
