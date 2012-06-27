@@ -1,7 +1,6 @@
 require "twitter-stats/version"
 require 'nokogiri'
 require 'open-uri'
-require 'pry'
 
 module Twitter
   module Stats
